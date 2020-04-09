@@ -4,7 +4,7 @@ service: api
 
 env_variables:
   PGUSER: "app_authenticator"
-  # PGHOST: "/cloudsql/lcb-1122:us-central1:lcb-postgres-db=tcp:5432"
+  PGHOST: "/cloudsql/lcb-1122:us-central1:lcb-postgres-db"
   PGHOST: "34.68.179.165"
   PGPASSWORD: "mocoloco"
   PGDATABASE: "lcb"
