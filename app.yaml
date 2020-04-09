@@ -1,11 +1,25 @@
 runtime: nodejs
-env: flex
+# env: flex
+service: api
 
 env_variables:
   PGUSER: "app_authenticator"
-  PGHOST: "/cloudsql/your-cloudsql-instance-connection-string"
-  PGPASSWORD: "your-password"
-  PGDATABASE: "your-database-name"
-
-beta_settings:
-  cloud_sql_instances: your-cloudsql-instance-connection-string
+  PGHOST: "/cloudsql/lcb-1122:us-central1:lcb-postgres-db=tcp:5432"
+  PGPASSWORD: "mocoloco"
+  PGDATABASE: "lcb"
+  SCHEMATA_TO_GRAPHQL: "auth,auth_fn,org,org_fn,app,lcb,lcb_fn,lcb_ref,lcb_hist"
+  DEFAULT_ROLE: "app_anonymous"
+  JWT_SECRET: "SUPERSECRET-SUPERSECRET-SUPERSECRET"
+  JWT_PG_TYPE_IDENTIFIER: "auth.jwt_token"
+  EXTENDED_ERRORS: "hint, detail, errcode"
+  DISABLE_DEFAULT_MUTATIONS: "true"
+  DYNAMIC_JSON: "true"
+  ENABLE_APOLLO_ENGINE: "false"
+  PORT: "8080"
+  WATCH_PG: "true"
+  GRAPHIQL: "true"
+  ENHANCE_GRAPHIQL: "true"
+  ALLOW_EXPLAIN: "true"
+  ENABLE_CORS: "true"
+# beta_settings:
+#   cloud_sql_instances: your-cloudsql-instance-connection-string

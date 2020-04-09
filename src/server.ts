@@ -1,20 +1,22 @@
 // POSTGRAPHILE
 import express from "express";
-// import pgdbi from "@graphile-contrib/pgdbi";
 import { postgraphile, makePluginHook } from "postgraphile";
 import mutationHooks from "./mutation-hooks";
 
 const app = express();
-// const pluginHook = makePluginHook([pgdbi]);
 
-// app.use(express.static("dist"));
+const connection = {
+  host: process.env.PGHOST,
+  user: process.env.PGUSER,     
+  password: process.env.PGPASSWORD,
+  database: process.env.PGDATABASE,
+  port: 5432,
+  ssl: true
+};
 
-// app.get("/", (req, res) => {
-//   res.redirect("/dist/index.html");
-// });
 
 const schema = postgraphile(
-  process.env.POSTGRES_CONNECTION,
+  connection,
   process.env.SCHEMATA_TO_GRAPHQL.split(","),
   {
     // pluginHook,
