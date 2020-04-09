@@ -13,14 +13,14 @@ const connection = {
   port: 5432,
   ssl: true
 };
-
+console.log('connection', connection)
 
 const schema = postgraphile(
   connection,
   process.env.SCHEMATA_TO_GRAPHQL.split(","),
   {
     // pluginHook,
-    enableCors: process.env.ENABLE_CORS === 'true',
+    enableCors: true,
     // enablePgdbi: process.env.ENABLE_PGDBI === 'true',
     pgDefaultRole: process.env.PG_DEFAULT_ROLE,
     jwtPgTypeIdentifier: process.env.JWT_PG_TYPE_IDENTIFIER,
