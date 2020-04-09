@@ -11,7 +11,7 @@ const connection = {
   password: process.env.PGPASSWORD,
   database: process.env.PGDATABASE,
   port: 5432,
-  ssl: true
+  // ssl: true
 };
 console.log('connection', connection)
 
