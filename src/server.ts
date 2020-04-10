@@ -13,7 +13,7 @@ const connection = {
   port: 5432,
   // ssl: true
 };
-console.log('connection', connection)
+console.log('connection yo', connection)
 
 const schema = postgraphile(
   connection,
