@@ -3,13 +3,13 @@ runtime: nodejs12
 service: api
 
 env_variables:
-  PGUSER: "app_authenticator"
+  PGUSER: "postgres"
   PGHOST: "/cloudsql/lcb-1122:us-central1:lcb-postgres-db"
   PGPASSWORD: "mocoloco"
   PGDATABASE: "lcb"
   SCHEMATA_TO_GRAPHQL: "auth,auth_fn,org,org_fn,app,lcb,lcb_fn,lcb_ref,lcb_hist"
   DEFAULT_ROLE: "app_anonymous"
-  JWT_SECRET: "SUPERSECRET-SUPERSECRET-SUPERSECRETT"
+  JWT_SECRET: "SUPERSECRET-SUPERSECRET-SUPERSECRET"
   JWT_PG_TYPE_IDENTIFIER: "auth.jwt_token"
   EXTENDED_ERRORS: "hint, detail, errcode"
   DISABLE_DEFAULT_MUTATIONS: "true"
